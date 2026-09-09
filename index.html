@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SARAVANAN A | Mechanical Engineer | CAD & Simulation Expert</title>
+  <meta name="description" content="Professional portfolio of SARAVANAN A — BE Mechanical Engineering graduate from Anna University. Expert in AutoCAD, SolidWorks, ANSYS, CATIA, and GD&T." />
+  <meta name="keywords" content="Mechanical Engineer, AutoCAD, SolidWorks, ANSYS, CATIA, GD&T, Anna University, Portfolio" />
+  <meta name="author" content="SARAVANAN A" />
+  <meta property="og:title" content="SARAVANAN A | Mechanical Engineer" />
+  <meta property="og:description" content="BE Mechanical Engineering graduate skilled in AutoCAD, SolidWorks, ANSYS, CATIA, and GD&T." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-gear"><i class="fas fa-cog fa-spin"></i></div>
+      <div class="loader-text">
+        <span>S</span><span>A</span><span>R</span><span>A</span><span>V</span><span>A</span><span>N</span><span>A</span><span>N</span>
+      </div>
+      <div class="loader-bar"><div class="loader-progress" id="loaderProgress"></div></div>
+    </div>
+  </div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>SARAVANAN A<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active" id="nav-home">Home</a></li>
+        <li><a href="#about" class="nav-link" id="nav-about">About</a></li>
+        <li><a href="#skills" class="nav-link" id="nav-skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" id="nav-projects">Projects</a></li>
+        <li><a href="#certifications" class="nav-link" id="nav-certifications">Certifications</a></li>
+        <li><a href="#contact" class="nav-link" id="nav-contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta" id="nav-hire-btn">Hire Me</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="hero_bg.jpg" alt="Engineering Background" class="hero-bg-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="particles" id="particles"></div>
+    <div class="floating-icons">
+      <div class="float-icon fi-1"><i class="fas fa-cog"></i></div>
+      <div class="float-icon fi-2"><i class="fas fa-drafting-compass"></i></div>
+      <div class="float-icon fi-3"><i class="fas fa-cube"></i></div>
+      <div class="float-icon fi-4"><i class="fas fa-atom"></i></div>
+      <div class="float-icon fi-5"><i class="fas fa-industry"></i></div>
+      <div class="float-icon fi-6"><i class="fas fa-wrench"></i></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <i class="fas fa-circle-dot pulse-dot"></i>
+          <span>Available for Opportunities</span>
+        </div>
+        <h1 class="hero-name">
+          <span class="name-line"><span class="accent">SARAVANAN</span> A</span>
+        </h1>
+        <div class="hero-title-wrap">
+          <span class="hero-pre">I'm a </span>
+          <span class="typed-text" id="typedText"></span>
+          <span class="typed-cursor">|</span>
+        </div>
+        <p class="hero-desc">
+          BE Mechanical Engineering graduate from <strong>Anna University</strong>, passionate about precision engineering,
+          CAD design, and simulation. Building tomorrow's machines one design at a time.
+        </p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num" data-target="5">0</span>
+            <span class="stat-label">Software Tools</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-target="4">0</span>
+            <span class="stat-label">Years Program</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-target="10">0</span>
+            <span class="stat-label">Projects Done</span>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary" id="hero-projects-btn">
+            <span>View My Work</span><i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn btn-outline" id="hero-contact-btn">
+            <span>Get In Touch</span><i class="fas fa-paper-plane"></i>
+          </a>
+          <a href="#" class="btn btn-ghost" id="hero-cv-btn" onclick="downloadCV(event)">
+            <span>Download CV</span><i class="fas fa-download"></i>
+          </a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/saravanan-a-694b3135b" target="_blank" class="social-link" id="hero-linkedin" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:2006a.saravanan@gmail.com" class="social-link" id="hero-email" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="tel:+919344938967" class="social-link" id="hero-phone" aria-label="Phone">
+            <i class="fas fa-phone"></i>
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="profile-wrapper">
+          <div class="profile-ring ring-1"></div>
+          <div class="profile-ring ring-2"></div>
+          <div class="profile-ring ring-3"></div>
+          <div class="profile-glow"></div>
+          <div class="profile-img-container">
+            <img src="profile.jpg" alt="SARAVANAN A - Mechanical Engineer" class="profile-img" id="profileImg" />
+          </div>
+          <div class="skill-badge sb-autocad">AutoCAD</div>
+          <div class="skill-badge sb-solidworks">SolidWorks</div>
+          <div class="skill-badge sb-ansys">ANSYS</div>
+          <div class="skill-badge sb-catia">CATIA</div>
+          <div class="skill-badge sb-gdt">GD&amp;T</div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator" id="scrollIndicator">
+      <span>Scroll Down</span>
+      <div class="scroll-wheel"><div class="scroll-dot"></div></div>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Who I Am</span>
+        <h2 class="section-title">About <span class="accent">Me</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-left" data-aos="fade-right">
+          <div class="about-img-wrap">
+            <img src="profile.jpg" alt="SARAVANAN A" class="about-img" />
+            <div class="about-img-card">
+              <i class="fas fa-graduation-cap"></i>
+              <div>
+                <strong>BE Mechanical Engg.</strong>
+                <span>Anna University</span>
+              </div>
+            </div>
+            <div class="about-img-badge">
+              <span>2023</span>
+              <small>Batch</small>
+            </div>
+          </div>
+        </div>
+        <div class="about-right" data-aos="fade-left">
+          <h3 class="about-heading">Mechanical Engineer &amp; CAD Specialist</h3>
+          <p class="about-text">
+            Hello! I'm <strong>SARAVANAN A</strong>, a passionate Mechanical Engineering undergraduate at
+            <strong>Anna University</strong> (Batch 2023-2027). I have a deep interest in precision design,
+            structural analysis, and simulation-driven engineering solutions.
+          </p>
+          <p class="about-text">
+            My expertise spans across industry-standard CAD tools - <strong>AutoCAD</strong>, <strong>SolidWorks</strong>,
+            <strong>CATIA</strong> - and simulation platforms like <strong>ANSYS</strong>. I also practice
+            <strong>Geometric Dimensioning and Tolerancing (GD&amp;T)</strong> to ensure manufacturing accuracy and quality.
+          </p>
+          <p class="about-text">
+            I am driven by a desire to bridge theoretical engineering knowledge with practical, real-world applications.
+            Always eager to take on challenging projects that push the boundaries of what is mechanically possible.
+          </p>
+          <div class="about-info-grid">
+            <div class="info-item">
+              <i class="fas fa-user-graduate"></i>
+              <div>
+                <span class="info-label">Degree</span>
+                <span class="info-val">BE Mechanical Engineering</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-university"></i>
+              <div>
+                <span class="info-label">University</span>
+                <span class="info-val">Anna University</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-calendar-alt"></i>
+              <div>
+                <span class="info-label">Duration</span>
+                <span class="info-val">2023 - 2027</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <span class="info-label">Location</span>
+                <span class="info-val">Tamil Nadu, India</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <span class="info-label">Email</span>
+                <span class="info-val">2006a.saravanan@gmail.com</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <span class="info-label">Phone</span>
+                <span class="info-val">+91 9344938967</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-actions">
+            <a href="#contact" class="btn btn-primary" id="about-contact-btn">
+              <span>Let's Collaborate</span><i class="fas fa-handshake"></i>
+            </a>
+            <a href="#" class="btn btn-outline" id="about-cv-btn" onclick="downloadCV(event)">
+              <span>Download CV</span><i class="fas fa-file-pdf"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section skills" id="skills">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">What I Know</span>
+        <h2 class="section-title">Technical <span class="accent">Skills</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-software" data-aos="fade-up">
+        <h3 class="skills-category-title"><i class="fas fa-laptop-code"></i> Software &amp; Tools</h3>
+        <div class="software-cards">
+          <div class="software-card" id="skill-autocad">
+            <div class="sw-icon autocad-color"><i class="fas fa-drafting-compass"></i></div>
+            <h4>AutoCAD</h4>
+            <p>2D drafting, technical drawings, floor plans, mechanical layouts</p>
+            <div class="sw-bar-wrap">
+              <div class="sw-bar" data-width="90"><div class="sw-bar-fill"></div></div>
+              <span class="sw-percent">90%</span>
+            </div>
+          </div>
+          <div class="software-card" id="skill-solidworks">
+            <div class="sw-icon solidworks-color"><i class="fas fa-cube"></i></div>
+            <h4>SolidWorks</h4>
+            <p>3D part modelling, assembly design, FEA simulation, drawings</p>
+            <div class="sw-bar-wrap">
+              <div class="sw-bar" data-width="85"><div class="sw-bar-fill"></div></div>
+              <span class="sw-percent">85%</span>
+            </div>
+          </div>
+          <div class="software-card" id="skill-ansys">
+            <div class="sw-icon ansys-color"><i class="fas fa-atom"></i></div>
+            <h4>ANSYS</h4>
+            <p>Structural analysis, thermal simulation, FEA, CFD basics</p>
+            <div class="sw-bar-wrap">
+              <div class="sw-bar" data-width="80"><div class="sw-bar-fill"></div></div>
+              <span class="sw-percent">80%</span>
+            </div>
+          </div>
+          <div class="software-card" id="skill-catia">
+            <div class="sw-icon catia-color"><i class="fas fa-project-diagram"></i></div>
+            <h4>CATIA V5</h4>
+            <p>Surface modelling, part design, assembly, aerospace/automotive</p>
+            <div class="sw-bar-wrap">
+              <div class="sw-bar" data-width="78"><div class="sw-bar-fill"></div></div>
+              <span class="sw-percent">78%</span>
+            </div>
+          </div>
+          <div class="software-card" id="skill-gdt">
+            <div class="sw-icon gdt-color"><i class="fas fa-ruler-combined"></i></div>
+            <h4>GD&amp;T</h4>
+            <p>Geometric dimensioning, tolerancing, ASME Y14.5 standards</p>
+            <div class="sw-bar-wrap">
+              <div class="sw-bar" data-width="82"><div class="sw-bar-fill"></div></div>
+              <span class="sw-percent">82%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="skills-core" data-aos="fade-up">
+        <h3 class="skills-category-title"><i class="fas fa-cogs"></i> Core Engineering Competencies</h3>
+        <div class="core-skills-grid">
+          <div class="core-skill-item" id="comp-design"><div class="cs-icon"><i class="fas fa-pencil-ruler"></i></div><span>Design Engineering</span></div>
+          <div class="core-skill-item" id="comp-mfg"><div class="cs-icon"><i class="fas fa-industry"></i></div><span>Manufacturing Processes</span></div>
+          <div class="core-skill-item" id="comp-thermo"><div class="cs-icon"><i class="fas fa-fire"></i></div><span>Thermodynamics</span></div>
+          <div class="core-skill-item" id="comp-fluid"><div class="cs-icon"><i class="fas fa-water"></i></div><span>Fluid Mechanics</span></div>
+          <div class="core-skill-item" id="comp-strength"><div class="cs-icon"><i class="fas fa-shield-alt"></i></div><span>Strength of Materials</span></div>
+          <div class="core-skill-item" id="comp-kinematics"><div class="cs-icon"><i class="fas fa-sync-alt"></i></div><span>Kinematics &amp; Dynamics</span></div>
+          <div class="core-skill-item" id="comp-metrolog"><div class="cs-icon"><i class="fas fa-ruler"></i></div><span>Metrology &amp; QC</span></div>
+          <div class="core-skill-item" id="comp-fea"><div class="cs-icon"><i class="fas fa-th"></i></div><span>FEA Analysis</span></div>
+          <div class="core-skill-item" id="comp-thermal-engg"><div class="cs-icon"><i class="fas fa-temperature-high"></i></div><span>Thermal Engineering</span></div>
+          <div class="core-skill-item" id="comp-rac"><div class="cs-icon"><i class="fas fa-snowflake"></i></div><span>Refrigeration &amp; AC</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section projects" id="projects">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">What I've Built</span>
+        <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card" id="proj-1" data-aos="fade-up">
+          <div class="proj-icon-wrap"><i class="fas fa-cog proj-icon"></i></div>
+          <div class="proj-tag">SolidWorks &middot; FEA</div>
+          <h3 class="proj-title">Gear Transmission Assembly</h3>
+          <p class="proj-desc">Designed a complete spur gear transmission system in SolidWorks, including 3D modelling, assembly, bill of materials, and stress analysis using FEA. Optimized gear tooth profile for maximum load efficiency.</p>
+          <div class="proj-tech"><span>SolidWorks</span><span>FEA</span><span>GD&amp;T</span></div>
+          <div class="proj-links"><a href="#contact" class="proj-link" id="proj1-details">View Details <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+        <div class="project-card featured" id="proj-2" data-aos="fade-up">
+          <div class="proj-featured-badge"><i class="fas fa-star"></i> Featured</div>
+          <div class="proj-icon-wrap"><i class="fas fa-wind proj-icon"></i></div>
+          <div class="proj-tag">ANSYS &middot; CFD</div>
+          <h3 class="proj-title">Thermal Analysis of Heat Exchanger</h3>
+          <p class="proj-desc">Performed comprehensive thermal simulation of a shell-and-tube heat exchanger using ANSYS Workbench. Analysed temperature distribution, heat transfer coefficients, and pressure drop to optimize performance.</p>
+          <div class="proj-tech"><span>ANSYS</span><span>Thermal FEA</span><span>CFD</span></div>
+          <div class="proj-links"><a href="#contact" class="proj-link" id="proj2-details">View Details <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+        <div class="project-card" id="proj-3" data-aos="fade-up">
+          <div class="proj-icon-wrap"><i class="fas fa-car proj-icon"></i></div>
+          <div class="proj-tag">CATIA V5 &middot; Surface</div>
+          <h3 class="proj-title">Automotive Body Panel Design</h3>
+          <p class="proj-desc">Created complex automotive body panel surfaces using CATIA V5 surface modelling tools. Applied Class-A surfacing techniques for aesthetics and aerodynamic optimization with complete GD&amp;T annotations.</p>
+          <div class="proj-tech"><span>CATIA V5</span><span>Surface Modelling</span><span>GD&amp;T</span></div>
+          <div class="proj-links"><a href="#contact" class="proj-link" id="proj3-details">View Details <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+        <div class="project-card" id="proj-4" data-aos="fade-up">
+          <div class="proj-icon-wrap"><i class="fas fa-building proj-icon"></i></div>
+          <div class="proj-tag">AutoCAD &middot; 2D Design</div>
+          <h3 class="proj-title">Machine Shop Layout Planning</h3>
+          <p class="proj-desc">Designed a full-scale machine shop layout using AutoCAD, including workstation placement, material flow paths, safety zones, and equipment positioning with lean manufacturing principles.</p>
+          <div class="proj-tech"><span>AutoCAD</span><span>Layout Design</span><span>Lean Mfg.</span></div>
+          <div class="proj-links"><a href="#contact" class="proj-link" id="proj4-details">View Details <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+        <div class="project-card featured" id="proj-5" data-aos="fade-up">
+          <div class="proj-featured-badge"><i class="fas fa-star"></i> Featured</div>
+          <div class="proj-icon-wrap"><i class="fas fa-robot proj-icon"></i></div>
+          <div class="proj-tag">SolidWorks &middot; Simulation</div>
+          <h3 class="proj-title">Robotic Arm Mechanism Design</h3>
+          <p class="proj-desc">Modelled and simulated a 4-DOF robotic arm mechanism in SolidWorks, with kinematic motion analysis, joint stress evaluation, and end-effector reach study. Included exploded views and assembly drawings.</p>
+          <div class="proj-tech"><span>SolidWorks</span><span>Motion Analysis</span><span>Kinematics</span></div>
+          <div class="proj-links"><a href="#contact" class="proj-link" id="proj5-details">View Details <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+        <div class="project-card" id="proj-6" data-aos="fade-up">
+          <div class="proj-icon-wrap"><i class="fas fa-layer-group proj-icon"></i></div>
+          <div class="proj-tag">ANSYS &middot; Structural</div>
+          <h3 class="proj-title">Structural Analysis of I-Beam</h3>
+          <p class="proj-desc">Conducted static structural analysis of an I-beam under various loading conditions using ANSYS. Determined stress concentration zones, deflection patterns, and applied GD&amp;T standards for specifications.</p>
+          <div class="proj-tech"><span>ANSYS</span><span>Structural FEA</span><span>GD&amp;T</span></div>
+          <div class="proj-links"><a href="#contact" class="proj-link" id="proj6-details">View Details <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section certifications" id="certifications">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">My Credentials</span>
+        <h2 class="section-title">Education &amp; <span class="accent">Certifications</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="certs-layout">
+        <div class="education-timeline" data-aos="fade-right">
+          <h3 class="certs-sub-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+          <div class="timeline">
+            <div class="tl-item" id="edu-1">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-date">2023 - 2027</span>
+                <h4>BE Mechanical Engineering</h4>
+                <p class="tl-institute">Anna University, Tamil Nadu</p>
+                <p class="tl-desc">Comprehensive study of mechanical design, manufacturing, thermodynamics, thermal engineering, refrigeration &amp; AC systems, fluid mechanics, and advanced simulation tools.</p>
+                <div class="tl-tags"><span>Design</span><span>Manufacturing</span><span>Simulation</span></div>
+              </div>
+            </div>
+            <div class="tl-item" id="edu-2">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-date">2021 - 2024</span>
+                <h4>Diploma in Mechanical Engineering</h4>
+                <p class="tl-institute">Tamil Nadu, India</p>
+                <p class="tl-desc">Completed Diploma in Mechanical Engineering with hands-on training in machine tools, manufacturing processes, technical drawing, and core mechanical subjects.</p>
+                <div class="tl-tags"><span>Diploma</span><span>Mechanical</span><span>Technical</span></div>
+              </div>
+            </div>
+            <div class="tl-item" id="edu-3">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-date">2021</span>
+                <h4>Secondary School Certificate (10th)</h4>
+                <p class="tl-institute">Tamil Nadu State Board</p>
+                <p class="tl-desc">Completed Secondary School Leaving Certificate (SSLC) with strong foundation in Mathematics, Science, and Technical subjects.</p>
+                <div class="tl-tags"><span>SSLC</span><span>Mathematics</span><span>Science</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="certs-cards-wrap" data-aos="fade-left">
+          <h3 class="certs-sub-title"><i class="fas fa-certificate"></i> Certifications</h3>
+          <div class="cert-cards">
+            <div class="cert-card" id="cert-autocad">
+              <div class="cert-icon autocad-color"><i class="fas fa-drafting-compass"></i></div>
+              <div class="cert-info">
+                <h4>AutoCAD Certified</h4>
+                <p>2D &amp; 3D Design Professional</p>
+                <span class="cert-badge">Certified</span>
+              </div>
+            </div>
+            <div class="cert-card" id="cert-solidworks">
+              <div class="cert-icon solidworks-color"><i class="fas fa-cube"></i></div>
+              <div class="cert-info">
+                <h4>SolidWorks Trained</h4>
+                <p>3D Modelling &amp; Simulation</p>
+                <span class="cert-badge">Certified</span>
+              </div>
+            </div>
+            <div class="cert-card" id="cert-ansys">
+              <div class="cert-icon ansys-color"><i class="fas fa-atom"></i></div>
+              <div class="cert-info">
+                <h4>ANSYS Simulation</h4>
+                <p>FEA &amp; Thermal Analysis</p>
+                <span class="cert-badge">Certified</span>
+              </div>
+            </div>
+            <div class="cert-card" id="cert-catia">
+              <div class="cert-icon catia-color"><i class="fas fa-project-diagram"></i></div>
+              <div class="cert-info">
+                <h4>CATIA V5 Trained</h4>
+                <p>Surface &amp; Part Design</p>
+                <span class="cert-badge">Certified</span>
+              </div>
+            </div>
+            <div class="cert-card" id="cert-gdt">
+              <div class="cert-icon gdt-color"><i class="fas fa-ruler-combined"></i></div>
+              <div class="cert-info">
+                <h4>GD&amp;T Proficient</h4>
+                <p>ASME Y14.5 Standards</p>
+                <span class="cert-badge">Proficient</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Contact <span class="accent">Me</span></h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle">Ready to collaborate? Let's build something great together.</p>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-info" data-aos="fade-right">
+          <div class="contact-card" id="contact-email-card">
+            <div class="cc-icon email-color"><i class="fas fa-envelope"></i></div>
+            <div class="cc-text">
+              <span class="cc-label">Email Me</span>
+              <a href="mailto:2006a.saravanan@gmail.com" class="cc-val">2006a.saravanan@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-card" id="contact-phone-card">
+            <div class="cc-icon phone-color"><i class="fas fa-phone"></i></div>
+            <div class="cc-text">
+              <span class="cc-label">Call Me</span>
+              <a href="tel:+919344938967" class="cc-val">+91 9344938967</a>
+            </div>
+          </div>
+          <div class="contact-card" id="contact-linkedin-card">
+            <div class="cc-icon linkedin-color"><i class="fab fa-linkedin-in"></i></div>
+            <div class="cc-text">
+              <span class="cc-label">Connect on LinkedIn</span>
+              <a href="https://www.linkedin.com/in/saravanan-a-694b3135b" target="_blank" class="cc-val">saravanan-a-694b3135b</a>
+            </div>
+          </div>
+          <div class="contact-card" id="contact-location-card">
+            <div class="cc-icon location-color"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="cc-text">
+              <span class="cc-label">Location</span>
+              <span class="cc-val">Tamil Nadu, India</span>
+            </div>
+          </div>
+          <div class="availability-box">
+            <div class="avail-dot"></div>
+            <div>
+              <strong>Currently Available</strong>
+              <p>Open to internships, full-time roles, and freelance design projects worldwide.</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrap" data-aos="fade-left">
+          <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">Your Name</label>
+                <input type="text" id="fname" name="name" placeholder="John Smith" required />
+              </div>
+              <div class="form-group">
+                <label for="femail">Your Email</label>
+                <input type="email" id="femail" name="email" placeholder="john@company.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="fsubject">Subject</label>
+              <input type="text" id="fsubject" name="subject" placeholder="Job Opportunity / Project Collaboration" required />
+            </div>
+            <div class="form-group">
+              <label for="fmessage">Message</label>
+              <textarea id="fmessage" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit" id="form-submit-btn">
+              <span id="submitBtnText">Send Message</span>
+              <i class="fas fa-paper-plane" id="submitBtnIcon"></i>
+            </button>
+            <div class="form-success" id="formSuccess">
+              <i class="fas fa-check-circle"></i>
+              <span>Message sent! I will get back to you within 24 hours.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-bracket">&lt;</span>SARAVANAN A<span class="logo-bracket">/&gt;</span>
+          </div>
+          <p>Mechanical Engineer &middot; CAD Specialist &middot; Problem Solver</p>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/saravanan-a-694b3135b" target="_blank" class="fs-link" id="footer-linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:2006a.saravanan@gmail.com" class="fs-link" id="footer-email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+919344938967" class="fs-link" id="footer-phone" aria-label="Phone"><i class="fas fa-phone"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 SARAVANAN A. All rights reserved.</p>
+        <p>Designed with <i class="fas fa-heart" style="color:#ef4444;"></i> for engineering excellence</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
