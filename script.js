@@ -2,7 +2,7 @@
    A. Saravanan - Portfolio JavaScript
    ================================================================ */
 
-// ─── LOADER ───────────────────────────────────────────────────
+// --- LOADER ---
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
   setTimeout(() => {
@@ -13,7 +13,7 @@ window.addEventListener('load', () => {
 });
 document.body.style.overflow = 'hidden';
 
-// ─── CUSTOM CURSOR ────────────────────────────────────────────
+// --- CUSTOM CURSOR ---
 const cursor = document.getElementById('cursor');
 const follower = document.getElementById('cursorFollower');
 let mouseX = 0, mouseY = 0, followerX = 0, followerY = 0;
@@ -46,7 +46,7 @@ document.querySelectorAll('a, button, .software-card, .project-card, .cert-card'
   });
 });
 
-// ─── TYPED TEXT ───────────────────────────────────────────────
+// --- TYPED TEXT ---
 const titles = [
   'Mechanical Engineer',
   'CAD Designer',
@@ -80,7 +80,7 @@ function typeLoop() {
 }
 setTimeout(typeLoop, 3000);
 
-// ─── NAVBAR ───────────────────────────────────────────────────
+// --- NAVBAR ---
 const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
@@ -124,17 +124,17 @@ navLinks.querySelectorAll('a').forEach(link => {
   });
 });
 
-// ─── BACK TO TOP ──────────────────────────────────────────────
+// --- BACK TO TOP ---
 document.getElementById('backTop').addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// ─── SCROLL INDICATOR ─────────────────────────────────────────
+// --- SCROLL INDICATOR ---
 document.getElementById('scrollIndicator').addEventListener('click', () => {
   document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
 });
 
-// ─── PARTICLES ───────────────────────────────────────────────
+// --- PARTICLES ---
 function createParticles() {
   const container = document.getElementById('particles');
   for (let i = 0; i < 40; i++) {
@@ -149,7 +149,7 @@ function createParticles() {
 }
 createParticles();
 
-// ─── COUNTER ANIMATION ────────────────────────────────────────
+// --- COUNTER ANIMATION ---
 function animateCounters() {
   document.querySelectorAll('.stat-num').forEach(el => {
     const target = +el.dataset.target;
@@ -163,7 +163,7 @@ function animateCounters() {
   });
 }
 
-// ─── SKILL BAR ANIMATION ──────────────────────────────────────
+// --- SKILL BAR ANIMATION ---
 function animateSkillBars() {
   document.querySelectorAll('.sw-bar').forEach(bar => {
     const width = bar.dataset.width;
@@ -172,7 +172,7 @@ function animateSkillBars() {
   });
 }
 
-// ─── AOS-LIKE SCROLL ANIMATIONS ──────────────────────────────
+// --- AOS-LIKE SCROLL ANIMATIONS ---
 function initAnimations() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -209,40 +209,66 @@ const skillsObserver = new IntersectionObserver((entries) => {
 const skillsSection = document.getElementById('skills');
 if (skillsSection) skillsObserver.observe(skillsSection);
 
-// ─── CONTACT FORM ─────────────────────────────────────────────
-function handleSubmit(e) {
+// ================================================================
+// FORMSPREE EMAIL INTEGRATION
+// Steps:
+//   1. Go to https://formspree.io and sign up (free)
+//   2. Create a new form → set email to 2006a.saravanan@gmail.com
+//   3. Copy the form ID from your endpoint URL
+//      (e.g. https://formspree.io/f/xpwzgkqr  → ID is  xpwzgkqr)
+//   4. Paste your ID below replacing FORMSPREE_ID
+// ================================================================
+const FORMSPREE_ID = 'FORMSPREE_ID'; // <-- REPLACE THIS with your Formspree form ID
+
+// --- CONTACT FORM ---
+async function handleSubmit(e) {
   e.preventDefault();
-  const btn = document.getElementById('form-submit-btn');
-  const btnText = document.getElementById('submitBtnText');
-  const btnIcon = document.getElementById('submitBtnIcon');
-  const success = document.getElementById('formSuccess');
+
+  const btn      = document.getElementById('form-submit-btn');
+  const btnText  = document.getElementById('submitBtnText');
+  const btnIcon  = document.getElementById('submitBtnIcon');
+  const success  = document.getElementById('formSuccess');
+  const errorBox = document.getElementById('formError');
+
+  const email   = document.getElementById('femail').value.trim();
+  const subject = document.getElementById('fsubject').value.trim() || 'Portfolio Contact';
+
+  // Sync hidden Formspree meta fields
+  document.getElementById('f_replyto').value        = email;
+  document.getElementById('f_subject_hidden').value = subject;
 
   // Loading state
-  btn.disabled = true;
+  btn.disabled        = true;
   btnText.textContent = 'Sending...';
-  btnIcon.className = 'fas fa-spinner fa-spin';
+  btnIcon.className   = 'fas fa-spinner fa-spin';
+  success.style.display  = 'none';
+  errorBox.style.display = 'none';
 
-  // Simulate sending
-  setTimeout(() => {
-    btn.disabled = false;
+  try {
+    const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      method : 'POST',
+      headers: { 'Accept': 'application/json' },
+      body   : new FormData(document.getElementById('contactForm'))
+    });
+
+    if (res.ok) {
+      success.style.display = 'flex';
+      document.getElementById('contactForm').reset();
+      setTimeout(() => { success.style.display = 'none'; }, 6000);
+    } else {
+      throw new Error('Server responded with error');
+    }
+  } catch (err) {
+    errorBox.style.display = 'flex';
+    setTimeout(() => { errorBox.style.display = 'none'; }, 8000);
+  } finally {
+    btn.disabled        = false;
     btnText.textContent = 'Send Message';
-    btnIcon.className = 'fas fa-paper-plane';
-    success.style.display = 'flex';
-    document.getElementById('contactForm').reset();
-
-    // Build mailto link and open
-    const name    = document.getElementById('fname').value || '';
-    const email   = document.getElementById('femail').value || '';
-    const subject = document.getElementById('fsubject').value || 'Portfolio Contact';
-    const message = document.getElementById('fmessage').value || '';
-    const mailTo = `mailto:2006a.saravanan@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message)}`;
-    window.location.href = mailTo;
-
-    setTimeout(() => { success.style.display = 'none'; }, 5000);
-  }, 1500);
+    btnIcon.className   = 'fas fa-paper-plane';
+  }
 }
 
-// ─── DOWNLOAD CV ──────────────────────────────────────────────
+// --- DOWNLOAD CV ---
 function downloadCV(e) {
   e.preventDefault();
   // Since no CV file exists, show informational alert
@@ -256,7 +282,7 @@ function downloadCV(e) {
   }, 2000);
 }
 
-// ─── PROFILE IMAGE FALLBACK ───────────────────────────────────
+// --- PROFILE IMAGE FALLBACK ---
 document.querySelectorAll('.profile-img, .about-img').forEach(img => {
   img.addEventListener('error', function () {
     this.style.display = 'none';
@@ -274,7 +300,7 @@ document.querySelectorAll('.profile-img, .about-img').forEach(img => {
   });
 });
 
-// ─── SMOOTH SECTION REVEAL ────────────────────────────────────
+// --- SMOOTH SECTION REVEAL ---
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -287,7 +313,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.section').forEach(sec => revealObserver.observe(sec));
 
-// ─── NAV LINK SMOOTH SCROLL ───────────────────────────────────
+// --- NAV LINK SMOOTH SCROLL ---
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', (e) => {
     const target = document.querySelector(anchor.getAttribute('href'));
@@ -298,7 +324,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ─── CARD TILT EFFECT ─────────────────────────────────────────
+// --- CARD TILT EFFECT ---
 document.querySelectorAll('.project-card, .software-card').forEach(card => {
   card.addEventListener('mousemove', (e) => {
     const rect = card.getBoundingClientRect();
@@ -311,7 +337,7 @@ document.querySelectorAll('.project-card, .software-card').forEach(card => {
   });
 });
 
-console.log('%c SARAVANAN A | Portfolio ', 
+console.log('%c SARAVANAN A | Portfolio ',
   'background: #0ea5e9; color: white; padding: 8px 16px; border-radius: 4px; font-size: 14px; font-weight: bold;');
-console.log('%c BE Mechanical Engineering | Anna University | 2023-2027', 
+console.log('%c BE Mechanical Engineering | Anna University | 2023-2027',
   'color: #94a3b8; font-size: 12px;');
